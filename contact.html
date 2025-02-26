@@ -41,30 +41,48 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .contact-form {
+         /* Contact Section */
+        .contact {
             max-width: 600px;
-            margin: 0 auto;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .contact-form label {
-            font-weight: bold;
+
+        .contact h2 {
+            text-align: center;
         }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
+
+        .contact form input,
+        .contact form textarea,
+        .contact button {
+            width: 95%;
+            margin: 10px 0;
             padding: 10px;
-            margin: 5px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 1em;
         }
-        .contact-form button {
-            background: #0073e6;
+
+        .contact button {
+            background-color: #004080;
             color: white;
-            padding: 10px 15px;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
         }
-        .contact-form button:hover {
-            background: #005bb5;
+
+        .contact button:hover {
+            background-color: #003366;
+        }
+
+        .contact a {
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            color: #25D366;
+            font-size: 1.2em;
+            text-decoration: none;
         }
         footer {
             background: #0073e6;
@@ -90,34 +108,34 @@
         </nav>
     </header>
     
-    <section>
-        <h2>Get in Touch</h2>
-        <p>If you have any questions, feel free to reach out to us using the contact form below or through our contact details.</p>
-        <div class="contact-form">
-            <form action="contact_form_handler.php" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-    
-    <section>
-        <h2>Contact Details</h2>
-        <p><strong>Email:</strong> info@comandts.com</p>
-        <p><strong>Phone:</strong> +260 966 130153</p>
-        <p><strong>Address:</strong> Lusaka, Zambia</p>
-    </section>
+	
+	<!-- Contact Section -->
+    <div class="contact">
+	<center>
+        <h2>Contact Sales Here</h2>
+        <p>For inquiries, feel free to reach out:</p>
+        <p>Phone: +260966130153</p>
+	</center>
+
+        <form action="mailto:darwin10@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required placeholder="Describe your inquiry (e.g. Pricing"></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <a href="https://wa.me/260966130153" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 10px 15px; border-radius: 50px; text-decoration: none; font-size: 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="height: 20px; vertical-align: middle; margin-right: 8px;"> Chat with us on WhatsApp
+        </a>
+    </div>
+
     
     <footer>
         <p>&copy; 2025 Comand Technological Services Ltd. All rights reserved.</p>
     </footer>
+	
+	
+	
+	
 </body>
 </html>
