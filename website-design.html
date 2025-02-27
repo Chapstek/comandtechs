@@ -36,10 +36,27 @@
         }
         section {
             padding: 20px;
-            background: white;
+			background: white url('background2.jpg') no-repeat center center;
+			background-size: cover;
             margin: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        ul li {
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+        ul li:hover {
+            transform: scale(1.05);
+            background-color: #e6f7ff;
         }
         footer {
             background: #0073e6;
@@ -67,23 +84,24 @@
     </header>
     
     <section>
-        <h2>Our Website Design Services</h2>
-        <p>We specialize in designing and developing high-quality, user-friendly websites tailored to your business needs. Our team ensures that your website is responsive, visually appealing, and optimized for performance.</p>
+        <h2>Website Design Services</h2>
+        <p style="color:purple">We specialize in designing and developing high-quality, user-friendly websites tailored to your business needs. Our team ensures that your website is responsive, visually appealing, and optimized for performance.</p>
         <h3>Our Services Include:</h3>
         <ul>
-            <li>Custom Website Development</li>
-            <li>Responsive Design for Mobile & Desktop</li>
-            <li>E-commerce Solutions</li>
-            <li>Content Management Systems (CMS)</li>
-            <li>SEO Optimization</li>
-            <li>UI/UX Design</li>
-            <li>Website Maintenance & Support</li>
+            <li style="color:purple">Custom Website Development</li>
+            <li style="color:purple">Responsive Design for Mobile & Desktop</li>
+            <li style="color:purple">E-commerce Solutions</li>
+            <li style="color:purple">Content Management Systems (CMS)</li>
+            <li style="color:purple">SEO Optimization</li>
+            <li style="color:purple">UI/UX Design</li>
+            <li style="color:purple">Website Maintenance & Support</li>
         </ul>
+		<a style="color:red" href="https://www.freepik.com/free-photo/blue-vintage-decorative-balls-background_15557668.htm">Image by rawpixel.com on Freepik</a>
     </section>
     
     <section>
         <h2>Why Choose Us?</h2>
-        <p>We create websites that not only look great but also perform exceptionally. Our solutions help businesses enhance their online presence and engage with their customers effectively.</p>
+        <p style="color:purple">We create websites that not only look great but also perform exceptionally. Our solutions help businesses enhance their online presence and engage with their customers effectively.</p>
     </section>
     
     <footer>

@@ -7,7 +7,6 @@
     <meta name="keywords" content="Graphic Design, Website Design, Software Engineering, Information Technological Helpdesk, Digital Marketing, Digital Publishing, Computer Hardware Repairs, Feasibility Studies, ICT Training">
     <meta name="author" content="Darwin Chapuswike">
     <title>Comand Technological Services Ltd</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,10 +38,30 @@
         }
         section {
             padding: 20px;
-            background: white;
+            background: white url('background.jpg') no-repeat center center;
             margin: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        ul li a {
+            display: inline-block;
+            padding: 8px 12px;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        ul li a:hover {
+            transform: scale(1.05);
+            background-color: #0073e6;
+            color: white;
+            border-radius: 4px;
         }
         footer {
             background: #0073e6;
@@ -82,6 +101,7 @@
             <li><a href="feasibility-studies.html">Feasibility Studies</a></li>
             <li><a href="ict-training.html">ICT Training</a></li>
         </ul>
+		<a style="color:red" href="http://www.freepik.com">Designed by pikisuperstar / Freepik</a>
     </section>
     
     <footer>

@@ -36,10 +36,27 @@
         }
         section {
             padding: 20px;
-            background: white;
+            background: white url('background1.jpg') no-repeat center center;
+			background-size: cover;
             margin: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        ul li {
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+        ul li:hover {
+            transform: scale(1.05);
+            background-color: #e6f7ff;
         }
         footer {
             background: #0073e6;
@@ -67,23 +84,24 @@
     </header>
     
     <section>
-        <h2>Our Graphic Design Services</h2>
-        <p>We offer high-quality graphic design services to help businesses establish their brand identity. Our team of creative professionals delivers visually appealing and effective designs tailored to your needs.</p>
+        <h2>Graphic Design Services</h2>
+        <p style="color:purple">We offer high-quality graphic design services to help businesses establish their brand identity. Our team of creative professionals delivers visually appealing and effective designs tailored to your needs.</p>
         <h3>Our Services Include:</h3>
         <ul>
-            <li>Logo Design</li>
-            <li>Brand Identity & Corporate Branding</li>
-            <li>Marketing Materials (Flyers, Brochures, Posters)</li>
-            <li>Social Media Graphics</li>
-            <li>Website and UI/UX Design</li>
-            <li>Infographics</li>
-            <li>Business Cards & Stationery</li>
+            <li style="color:purple">Logo Design</li>
+            <li style="color:purple">Brand Identity & Corporate Branding</li>
+            <li style="color:purple">Marketing Materials (Flyers, Brochures, Posters)</li>
+            <li style="color:purple">Social Media Graphics</li>
+            <li style="color:purple">Website and UI/UX Design</li>
+            <li style="color:purple">Infographics</li>
+            <li style="color:purple">Business Cards & Stationery</li>
         </ul>
+		<a style="color:red" href="https://www.freepik.com/free-photo/3d-background-with-white-cubes_45147276.htm">Image by freepik</a>
     </section>
     
     <section>
         <h2>Why Choose Us?</h2>
-        <p>Our designs are crafted to make a lasting impression. We work closely with clients to understand their vision and translate it into compelling visuals that resonate with their target audience.</p>
+        <p style="color:purple">Our designs are crafted to make a lasting impression. We work closely with clients to understand their vision and translate it into compelling visuals that resonate with their target audience.</p>
     </section>
     
     <footer>

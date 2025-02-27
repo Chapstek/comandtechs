@@ -36,10 +36,27 @@
         }
         section {
             padding: 20px;
-            background: white;
+			background: white url('background5.jpg') no-repeat center 30%;
+			background-size: cover;
             margin: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        ul li {
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+        ul li:hover {
+            transform: scale(1.05);
+            background-color: #e6f7ff;
         }
         footer {
             background: #0073e6;
@@ -67,23 +84,24 @@
     </header>
     
     <section>
-        <h2>Our IT Helpdesk Services</h2>
-        <p>We offer reliable IT support and troubleshooting services to ensure your business operations run smoothly with minimal downtime.</p>
+        <h2>IT Helpdesk Services</h2>
+        <p style="color:purple">We offer reliable IT support and troubleshooting services to ensure your business operations run smoothly with minimal downtime.</p>
         <h3>Our Services Include:</h3>
         <ul>
-            <li>24/7 Remote and On-site Support</li>
-            <li>Hardware & Software Troubleshooting</li>
-            <li>Network Connectivity Support</li>
-            <li>User Account Management</li>
-            <li>Security & Antivirus Support</li>
-            <li>System Updates & Patch Management</li>
-            <li>IT Consultation & Best Practices</li>
+            <li style="color:purple">24/7 Remote and On-site Support</li>
+            <li style="color:purple">Hardware & Software Troubleshooting</li>
+            <li style="color:purple">Network Connectivity Support</li>
+            <li style="color:purple">User Account Management</li>
+            <li style="color:purple">Security & Antivirus Support</li>
+            <li style="color:purple">System Updates & Patch Management</li>
+            <li style="color:purple">IT Consultation & Best Practices</li>
         </ul>
+		<a style="color:red" href="https://www.pexels.com/photo/gray-and-white-wallpaper-1103970/">Photo by Johannes Plenio:</a>
     </section>
     
     <section>
         <h2>Why Choose Us?</h2>
-        <p>Our expert IT support team is dedicated to resolving issues quickly and efficiently, ensuring minimal disruption to your business operations.</p>
+        <p style="color:purple">Our expert IT support team is dedicated to resolving issues quickly and efficiently, ensuring minimal disruption to your business operations.</p>
     </section>
     
     <footer>

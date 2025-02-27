@@ -36,10 +36,27 @@
         }
         section {
             padding: 20px;
-            background: white;
+			background: white url('background4.jpg') no-repeat center 30%;
+			background-size: cover;
             margin: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        ul li {
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+        ul li:hover {
+            transform: scale(1.05);
+            background-color: #e6f7ff;
         }
         footer {
             background: #0073e6;
@@ -67,24 +84,25 @@
     </header>
     
     <section>
-        <h2>Our Software Engineering Services</h2>
-        <p>We provide custom software solutions tailored to meet your business needs, ensuring scalability, security, and efficiency.</p>
+        <h2>Software Engineering Services</h2>
+        <p style="color:purple">We provide custom software solutions tailored to meet your business needs, ensuring scalability, security, and efficiency.</p>
         <h3>Our Services Include:</h3>
         <ul>
-            <li>Custom Software Development</li>
-            <li>Web Application Development</li>
-            <li>Mobile App Development (iOS & Android)</li>
-            <li>Cloud-based Software Solutions</li>
-            <li>Software Testing & Quality Assurance</li>
-            <li>API Development & Integration</li>
-            <li>AI & Machine Learning Solutions</li>
+            <li style="color:purple">Custom Software Development</li>
+            <li style="color:purple">Web Application Development</li>
+            <li style="color:purple">Mobile App Development (iOS & Android)</li>
+            <li style="color:purple">Cloud-based Software Solutions</li>
+            <li style="color:purple">Software Testing & Quality Assurance</li>
+            <li style="color:purple">API Development & Integration</li>
+            <li style="color:purple">AI & Machine Learning Solutions</li>
         </ul>
+		<a style="color:red" href="https://www.pexels.com/photo/gray-and-white-wallpaper-1103970/">Photo by Johannes Plenio: </a> 
     </section>
     
-    <section>
+      <section>
         <h2>Why Choose Us?</h2>
-        <p>Our team of experienced software engineers is committed to delivering high-quality, innovative solutions that drive business growth and efficiency.</p>
-    </section>
+        <p style="color:purple">Our team of experienced software engineers is committed to delivering high-quality, innovative solutions that drive business growth and efficiency.</p>
+      </section>
     
     <footer>
         <p>&copy; 2025 Comand Technological Services Ltd. All rights reserved.</p>
