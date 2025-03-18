@@ -4,57 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Design - Comand Technological Services Ltd</title>
-    <link rel="stylesheet">
     <style>
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
         }
+
         header {
             background: #0073e6;
             color: white;
             padding: 20px;
             text-align: center;
         }
+
         nav ul {
             list-style: none;
             padding: 0;
             text-align: center;
             background: #005bb5;
         }
+
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
+
         section {
             padding: 20px;
-			background: white url('background2.jpg') no-repeat center center;
-			background-size: cover;
+             background: white url('background2.jpg') no-repeat center center;
             margin: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 1s forwards;
         }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
         }
-        ul li {
-            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 300%; /* 100% * number of slides */
         }
-       
+
+        .slide {
+            flex: 0 0 100%; /* Each slide takes full width */
+        }
+
+        .slide img {
+            width: 35%;
+            height: auto;
+            display: block;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
         footer {
             background: #0073e6;
             color: white;
@@ -94,16 +125,24 @@
             <li style="color:purple">Website Maintenance & Support</li>
         </ul>
 		
-		<!-- Logo container positioned on the right -->
-        <div style="position: absolute; top: 60%; right: 20%; transform: translateY(-50%);">
-        <img src="html.png" alt=" HTML Logo" style="width: 150px; height: auto;">
-		<img src="css.png" alt=" CSS Logo" style="width: 150px; height: auto;">
-		<img src="js.png" alt=" JS Logo" style="width: 150px; height: auto;">
+
     </div>
 		
 		
 		
 		<a style="color:red" href="https://www.freepik.com/free-photo/blue-vintage-decorative-balls-background_15557668.htm">Image by rawpixel.com on Freepik</a>
+    </section>
+	
+	<section style="position: relative;">
+        <div class="slideshow-container">
+            <div class="slides">
+                <div class="slide"><img src="html.png" alt="Example of Company Logo"></div>
+                <div class="slide"><img src="css.png" alt="Example of Company Logo"></div>
+                <div class="slide"><img src="js.png" alt="Example of Company Logo"></div>
+            </div>
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
     </section>
     
     <section>
@@ -114,5 +153,39 @@
     <footer>
         <p>&copy; 2025 Comand Technological Services Ltd. All rights reserved.</p>
     </footer>
+	
+	<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let slideIndex = 0;
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+
+            function showSlide(index) {
+                if (index >= totalSlides) slideIndex = 0;
+                if (index < 0) slideIndex = totalSlides - 1;
+                slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+            }
+
+            document.querySelector('.prev').addEventListener('click', function() {
+                slideIndex--;
+                showSlide(slideIndex);
+            });
+
+            document.querySelector('.next').addEventListener('click', function() {
+                slideIndex++;
+                showSlide(slideIndex);
+            });
+
+            setInterval(() => {
+                slideIndex++;
+                showSlide(slideIndex);
+            }, 3000);
+
+            showSlide(slideIndex);
+        });
+    </script>
+	
 </body>
 </html>
+
+
