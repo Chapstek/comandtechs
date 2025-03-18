@@ -6,7 +6,7 @@
     <title>System Administration - Comand Technological Services Ltd</title>
     <link rel="stylesheet">
     <style>
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -41,10 +41,58 @@
 
         section {
             padding: 20px;
-             background: white url('background3.png') no-repeat center center;
+             background: white url('background2.jpg') no-repeat center center;
             margin: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 300%; /* 100% * number of slides */
+        }
+
+        .slide {
+            flex: 0 0 100%; /* Each slide takes full width */
+        }
+
+        .slide img {
+            width: 35%;
+            height: auto;
+            display: block;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        footer {
+            background: #0073e6;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
         }
 
     </style>
@@ -86,15 +134,17 @@
 	
 	<section style="position: relative;">
 	
-	<h2>Our Partners</h2> </br></br></br></br>
-	
-	<!-- Logo container positioned on the right -->
-        <div style="position: absolute; top: 50%; right: 33%; transform: translateY(-50%);">
-        <img src="trt.png" alt=" TRT Logo" style="width: 150px; height: auto;">
-        </div> </br></br></br></br></br></br>
-		<div style="position: absolute; top: 70%; right: 12%; transform: translateY(-50%);">
-		<img src="partners.png" alt=" Partners Logos" style="width: 300px; height: auto;">
-        </div> </br></br>
+	<<div class="slideshow-container">
+            <div class="slides">
+                <div class="slide"><img src="trt.png" alt="Example of Company Logo"></div>
+                <div class="slide"><img src="cisco.png" alt="Example of Company Logo"></div>
+                <div class="slide"><img src="dell.png" alt="Example of Company Logo"></div>
+				 <div class="slide"><img src="hp.png" alt="Example of Company Logo"></div>
+				  <div class="slide"><img src="symantec.png" alt="Example of Company Logo"></div>
+            </div>
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
         
     </section>
     
@@ -106,5 +156,37 @@
     <footer>
         <p>&copy; 2025 Comand Technological Services Ltd. All rights reserved.</p>
     </footer>
+	
+	<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let slideIndex = 0;
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+
+            function showSlide(index) {
+                if (index >= totalSlides) slideIndex = 0;
+                if (index < 0) slideIndex = totalSlides - 1;
+                slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+            }
+
+            document.querySelector('.prev').addEventListener('click', function() {
+                slideIndex--;
+                showSlide(slideIndex);
+            });
+
+            document.querySelector('.next').addEventListener('click', function() {
+                slideIndex++;
+                showSlide(slideIndex);
+            });
+
+            setInterval(() => {
+                slideIndex++;
+                showSlide(slideIndex);
+            }, 3000);
+
+            showSlide(slideIndex);
+        });
+    </script>
+	
 </body>
 </html>
