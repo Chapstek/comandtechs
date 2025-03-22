@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Software Engineering - Comand Technological Services Ltd</title>
-    <link rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,48 +12,80 @@
             background-color: #f4f4f4;
             color: #333;
         }
+
         header {
             background: #0073e6;
             color: white;
             padding: 20px;
             text-align: center;
         }
+
         nav ul {
             list-style: none;
             padding: 0;
             text-align: center;
             background: #005bb5;
         }
+
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
+
         section {
             padding: 20px;
-			background: white url('background4.jpg') no-repeat center 30%;
-			background-size: cover;
+            background: white url('background4.jpg') no-repeat center center;
             margin: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 1s forwards;
         }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
         }
-        ul li {
-            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 300%; /* 100% * number of slides */
         }
-       
+
+        .slide {
+            flex: 0 0 100%; /* Each slide takes full width */
+        }
+
+        .slide img {
+            width: 35%;
+            height: auto;
+            display: block;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
         footer {
             background: #0073e6;
             color: white;
@@ -65,6 +96,7 @@
     </style>
 </head>
 <body>
+
     <header>
         <h1>Software Engineering</h1>
         <nav>
@@ -83,7 +115,8 @@
     <section>
         <h2>Software Engineering Services</h2>
         <p style="color:purple">We provide custom software solutions tailored to meet your business needs, ensuring scalability, security, and efficiency.</p>
-        <h3>Our Services Include:</h3>
+		
+		<h3>Our Services Include:</h3>
         <ul>
             <li style="color:purple">Custom Software Development</li>
             <li style="color:purple">Web Application Development</li>
@@ -93,24 +126,61 @@
             <li style="color:purple">API Development & Integration</li>
             <li style="color:purple">AI & Machine Learning Solutions</li>
         </ul>
-		<!-- Logo container positioned on the right -->
-        <div style="position: absolute; top: 60%; right: 20%; transform: translateY(-50%);">
-        <img src="vs.png" alt=" VS Logo" style="width: 150px; height: auto;">
-		<img src="android.png" alt=" Android Studio Logo" style="width: 150px; height: auto;">
-		<img src="python.png" alt=" Python Logo" style="width: 150px; height: auto;">
-        </div>
-		
-		
-		<a style="color:red" href="https://www.pexels.com/photo/gray-and-white-wallpaper-1103970/">Photo by Johannes Plenio: </a> 
+	
+        <a style="color:red" href="https://www.pexels.com/photo/gray-and-white-wallpaper-1103970/">Photo by Johannes Plenio</a>
     </section>
-    
-      <section>
+
+    <section style="position: relative;">
+        <div class="slideshow-container">
+            <div class="slides">
+                <div class="slide"><img src="vs.png" alt="Visual Studio Logo"></div>
+                <div class="slide"><img src="android.png" alt="Android Studio Logo"></div>
+                <div class="slide"><img src="python.png" alt="Python Logo"></div>
+            </div>
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
+    </section>
+	
+	<section>
         <h2>Why Choose Us?</h2>
         <p style="color:purple">Our team of experienced software engineers is committed to delivering high-quality, innovative solutions that drive business growth and efficiency.</p>
-      </section>
-    
+    </section>
+
     <footer>
-        <p>&copy; 2025 Comand Technological Services Ltd. All rights reserved.</p>
+        <p>© 2025 Comand Technological Services Ltd. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let slideIndex = 0;
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+
+            function showSlide(index) {
+                if (index >= totalSlides) slideIndex = 0;
+                if (index < 0) slideIndex = totalSlides - 1;
+                slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+            }
+
+            document.querySelector('.prev').addEventListener('click', function() {
+                slideIndex--;
+                showSlide(slideIndex);
+            });
+
+            document.querySelector('.next').addEventListener('click', function() {
+                slideIndex++;
+                showSlide(slideIndex);
+            });
+
+            setInterval(() => {
+                slideIndex++;
+                showSlide(slideIndex);
+            }, 3000); // Matches Graphic Design page speed (3 seconds)
+
+            showSlide(slideIndex);
+        });
+    </script>
+
 </body>
 </html>
