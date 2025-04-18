@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graphic Design - Mobile View</title>
+    <title>Graphic Design - Comand Technological Services Ltd (Mobile)</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="cts_logo.png" type="image/png">
     <style>
@@ -13,22 +13,80 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            font-size: 16px;
         }
 
         header {
             background: #0073e6;
             color: white;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            background: #005bb5;
+        }
+
+        nav ul li {
+            display: block;
+            padding: 10px 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
         }
 
         section {
             padding: 15px;
-            background: white;
+            background: white url('background1.jpg') no-repeat center center;
+            background-size: cover;
             margin: 15px;
             border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 300%;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .prev { left: 5px; }
+        .next { right: 5px; }
 
         footer {
             background: #0073e6;
@@ -37,57 +95,96 @@
             padding: 10px;
             margin-top: 20px;
         }
-
-        .mobile-only {
-            display: block;
-        }
-
-        .desktop-warning {
-            display: none;
-        }
-
-        @media (min-width: 1025px) {
-            .mobile-only {
-                display: none;
-            }
-
-            .desktop-warning {
-                display: block;
-                text-align: center;
-                color: red;
-                margin-top: 50px;
-                font-weight: bold;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <div class="mobile-only">
-        <header>
-            <h1>Graphic Design</h1>
-        </header>
+<header>
+    <h1>Graphic Design</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <section>
-            <h2>Mobile Services</h2>
-            <p>Welcome to our graphic design mobile page! Get logos, social media designs, and branding all from your phone.</p>
-            <ul>
-                <li>Quick logo drafts</li>
-                <li>Mobile-optimized branding</li>
-                <li>Social media content design</li>
-                <li>Order from WhatsApp</li>
-            </ul>
-        </section>
+<section>
+    <h2>Graphic Design Services</h2>
+    <p style="color:purple">We offer high-quality graphic design services to help businesses establish their brand identity.</p>
 
-        <footer>
-            <p>&copy; 2025 Comand Technological Services Ltd</p>
-        </footer>
+    <h3>Our Services Include:</h3>
+    <ul>
+        <li style="color:purple">Logo Design</li>
+        <li style="color:purple">Brand Identity & Corporate Branding</li>
+        <li style="color:purple">Marketing Materials (Flyers, Brochures, Posters)</li>
+        <li style="color:purple">Social Media Graphics</li>
+        <li style="color:purple">Website and UI/UX Design</li>
+        <li style="color:purple">Infographics</li>
+        <li style="color:purple">Business Cards & Stationery</li>
+    </ul>
+
+    <a style="color:red" href="https://www.freepik.com/free-photo/3d-background-with-white-cubes_45147276.htm">
+        Image by freepik
+    </a>
+</section>
+
+<section style="position: relative;">
+    <div class="slideshow-container">
+        <div class="slides">
+            <div class="slide"><img src="chaganti.png" alt="Company Logo 1"></div>
+            <div class="slide"><img src="charmil.png" alt="Company Logo 2"></div>
+            <div class="slide"><img src="horizon.png" alt="Company Logo 3"></div>
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
     </div>
+</section>
 
-    <div class="desktop-warning">
-        This page is only accessible on mobile devices.
-    </div>
+<section>
+    <h2>Why Choose Us?</h2>
+    <p style="color:purple">Our designs are crafted to make a lasting impression. We work closely with clients to understand their vision and translate it into compelling visuals that resonate with their target audience.</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Comand Technological Services Ltd. All rights reserved.</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let slideIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        function showSlide(index) {
+            if (index >= totalSlides) slideIndex = 0;
+            if (index < 0) slideIndex = totalSlides - 1;
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        document.querySelector('.prev').addEventListener('click', function() {
+            slideIndex--;
+            showSlide(slideIndex);
+        });
+
+        document.querySelector('.next').addEventListener('click', function() {
+            slideIndex++;
+            showSlide(slideIndex);
+        });
+
+        setInterval(() => {
+            slideIndex++;
+            showSlide(slideIndex);
+        }, 4000);
+
+        showSlide(slideIndex);
+    });
+</script>
 
 </body>
 </html>
-
