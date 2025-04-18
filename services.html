@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="styles.css">
 	<link rel="icon" href="cts_logo.png" type="image/png">
+
+<!-- Mobile-only graphic design link -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.innerWidth < 1025) {
+            const link = document.createElement("a");
+            link.href = "graphic-design-mobile.html";
+            link.textContent = "Graphic Design (Mobile)";
+            link.style.color = "purple";
+            link.style.fontWeight = "bold";
+            link.style.display = "block";
+            link.style.textAlign = "center";
+            document.body.appendChild(link);
+        }
+    });
+</script>
+
+
+	
     <style>
         body {
             font-family: Arial, sans-serif;
