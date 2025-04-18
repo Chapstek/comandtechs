@@ -69,9 +69,14 @@
         }
 
         .slide img {
-            width: 100%;
-            height: auto;
-        }
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* or 'cover' depending on desired effect */
+    display: block;
+    max-height: 400px; /* optional: limits image height to keep layout neat */
+    margin: auto;
+         }
+
 
         .prev, .next {
             position: absolute;
